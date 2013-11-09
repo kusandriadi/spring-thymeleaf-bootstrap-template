@@ -8,6 +8,14 @@
 	<name>springmvc-thymeleaf-bootstrap Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<!-- JBoss repository for Hibernate -->
+	<repositories>
+		<repository>
+			<id>JBoss repository</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<!-- TestNg -->
 		<dependency>
@@ -50,7 +58,24 @@
 			<version>${hibernate-version}</version>
 		</dependency>
 
-		<!-- Hibernate library dependecy start -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>${hibernate-annotation-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>${hibernate-common-annotation-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator-version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
@@ -123,6 +148,9 @@
 	<properties>
 		<spring-version>3.2.4.RELEASE</spring-version>
 		<hibernate-version>4.2.7.Final</hibernate-version>
+		<hibernate-annotation-version>3.5.6-Final</hibernate-annotation-version>
+		<hibernate-common-annotation-version>3.2.0.Final</hibernate-common-annotation-version>
+		<hibernate-validator-version>4.2.0.Final</hibernate-validator-version>
 		<testng-version>6.8.7</testng-version>
 		<mysql-version>5.1.27</mysql-version>
 		<cglib-version>2.2</cglib-version>

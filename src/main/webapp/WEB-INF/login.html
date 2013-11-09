@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="../css/login.css" th:href="@{/css/login.css}" />
+</head>
+<body>
+	<div class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="text" class="form-control" placeholder="Email address"></input>
+			<input type="password"
+				class="form-control" placeholder="Password"></input> 
+				<label
+				class="checkbox"> <input type="checkbox" value="remember-me" />
+				Remember me
+			</label>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		</form>
+	</div>
+</body>
+</html>
