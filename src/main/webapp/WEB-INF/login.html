@@ -5,15 +5,10 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-signin">
+		<form class="form-signin" th:action="@{/j_spring_security_check}" method="post">
 			<h2 class="form-signin-heading">Please sign in</h2>
-			<input type="text" class="form-control" placeholder="Email address"></input>
-			<input type="password"
-				class="form-control" placeholder="Password"></input> 
-				<label
-				class="checkbox"> <input type="checkbox" value="remember-me" />
-				Remember me
-			</label>
+			<input type="text" class="form-control" placeholder="Email address" id="j_username" name="j_username" />
+			<input type="password" class="form-control" placeholder="Password" id="j_password" name="j_password"/> 
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		</form>
 	</div>

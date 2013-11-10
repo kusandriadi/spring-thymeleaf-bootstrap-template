@@ -12,7 +12,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String id;
+	private int idUser;
 	
 	@NotEmpty
 	private String username;
@@ -22,12 +22,12 @@ public class User {
 	
 	private String role;
 
-	public String getId() {
-		return id;
+	public int getIdUser() {
+		return idUser;
 	}
-
-	public void setId(String id) {
-		this.id = id;
+	
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getUsername() {
@@ -56,7 +56,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password="
+		return "User [idUser=" + idUser + ", username=" + username + ", password="
 				+ password + ", role=" + role + "]";
 	}
 }

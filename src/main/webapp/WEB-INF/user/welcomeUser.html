@@ -3,13 +3,11 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-
 	<div class="container">
 		<div class="jumbotron">
-			<label id="welcome" th:text="${welcome}"></label>
-			<p>This example is a quick exercise to illustrate how the default
-				application work.</p>
+			Hello <label id="username" th:text="${username}"></label>, You are successfully authenticated!
 		</div>
+		<a th:href="@{/logout}">Log out</a>	
 	</div>
 </body>
 </html>

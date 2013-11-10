@@ -1,14 +1,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="../css/login.css" th:href="@{/css/login.css}" />
 </head>
 <body>
-
 	<div class="container">
 		<div class="jumbotron">
-			<label id="welcome" th:text="${welcome}"></label>
-			<p>This example is a quick exercise to illustrate how the default
-				application work.</p>
+			Your username or password are wrong, Back to <a th:href="@{/login}">Log in</a> Page	
 		</div>
 	</div>
 </body>

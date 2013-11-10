@@ -34,6 +34,12 @@
 
 		<dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
@@ -44,11 +50,30 @@
 			<version>${spring-version}</version>
 		</dependency>
 
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring-security-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security-version}</version>
+		</dependency>
+
 		<!-- MySQL database driver -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.9</version>
+			<version>${mysql-version}</version>
 		</dependency>
 
 		<!-- Hibernate framework -->
@@ -58,17 +83,17 @@
 			<version>${hibernate-version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>${hibernate-annotation-version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.hibernate</groupId> -->
+<!-- 			<artifactId>hibernate-annotations</artifactId> -->
+<!-- 			<version>${hibernate-annotation-version}</version> -->
+<!-- 		</dependency> -->
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>${hibernate-common-annotation-version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.hibernate</groupId> -->
+<!-- 			<artifactId>hibernate-commons-annotations</artifactId> -->
+<!-- 			<version>${hibernate-common-annotation-version}</version> -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -147,6 +172,7 @@
 
 	<properties>
 		<spring-version>3.2.4.RELEASE</spring-version>
+		<spring-security-version>3.1.4.RELEASE</spring-security-version>
 		<hibernate-version>4.2.7.Final</hibernate-version>
 		<hibernate-annotation-version>3.5.6-Final</hibernate-annotation-version>
 		<hibernate-common-annotation-version>3.2.0.Final</hibernate-common-annotation-version>
