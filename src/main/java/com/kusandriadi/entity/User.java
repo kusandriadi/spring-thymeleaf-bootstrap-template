@@ -1,18 +1,19 @@
 package com.kusandriadi.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class User {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idUser;
+	@Id @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid2")
+	private String idUser;
 	
 	@NotEmpty
 	private String username;
@@ -21,12 +22,15 @@ public class User {
 	private String password;
 	
 	private String role;
+	
+	@Column(columnDefinition = "boolean default 1")
+	private boolean enabled;
 
-	public int getIdUser() {
+	public String getIdUser() {
 		return idUser;
 	}
 	
-	public void setIdUser(int idUser) {
+	public void setIdUser(String idUser) {
 		this.idUser = idUser;
 	}
 
@@ -53,10 +57,18 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	@Override
 	public String toString() {
 		return "User [idUser=" + idUser + ", username=" + username + ", password="
-				+ password + ", role=" + role + "]";
+				+ password + ", role=" + role + ", enabled=" + enabled + "]";
 	}
 }

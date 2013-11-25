@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.8, for Linux (i686)
+-- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: db_test
 -- ------------------------------------------------------
--- Server version	5.5.8
+-- Server version	5.5.34-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `User` (
-  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` varchar(255) NOT NULL,
+  `enabled` tinyint(1) DEFAULT '1',
   `password` varchar(255) NOT NULL,
   `role` varchar(255) DEFAULT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'123456','ROLE_ADMIN','kusandriadi');
+INSERT INTO `User` VALUES ('1',1,'123456','ROLE_ADMIN','kusandriadi'),('2',1,'123456','ROLE_GUEST','guest');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-11  0:12:09
+-- Dump completed on 2013-11-26  0:14:38
