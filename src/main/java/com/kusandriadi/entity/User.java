@@ -1,74 +1,80 @@
 package com.kusandriadi.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 @Entity
-public class User {
+public class User implements Serializable {
 
-	@Id @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid2")
-	private String idUser;
-	
-	@NotEmpty
-	private String username;
-	
-	@NotEmpty
-	private String password;
-	
-	private String role;
-	
-	@Column(columnDefinition = "boolean default 1")
-	private boolean enabled;
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    private String userId;
 
-	public String getIdUser() {
-		return idUser;
-	}
-	
-	public void setIdUser(String idUser) {
-		this.idUser = idUser;
-	}
+    @NotBlank
+    private String username;
 
-	public String getUsername() {
-		return username;
-	}
+    @NotBlank
+    private String password;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    private String role;
 
-	public String getPassword() {
-		return password;
-	}
+    @Column(columnDefinition = "boolean default 1")
+    private boolean enabled;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public String getRole() {
-		return role;
-	}
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	public boolean isEnabled() {
-		return enabled;
-	}
-	
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	@Override
-	public String toString() {
-		return "User [idUser=" + idUser + ", username=" + username + ", password="
-				+ password + ", role=" + role + ", enabled=" + enabled + "]";
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", role='" + role + '\'' +
+                ", enabled=" + enabled +
+                '}';
+    }
 }
